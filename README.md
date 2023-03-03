@@ -23,7 +23,7 @@ What if there was a way for you to identify what exact changes you made and wher
 
 ## Git is distributed version control
 
-<img src="./git-1.png" width="500">
+<img src="./images/git-1.png" width="500">
 
 ## How to install GIT?
 
@@ -93,7 +93,7 @@ Type git status in the terminal
 git status
 ```
 Output
-<image src="git-2.png">
+<image src="./images/git-2.png">
 
 The Red marked files indicates that there are changes in the directory. In our case, a new file is added which is not yet commited in git repo.
 
@@ -104,7 +104,7 @@ git add .
 git status
 ```
 Output
-<img src="git-3.png">
+<img src="./images/git-3.png">
 
 ## Now your changes are ready to be commit, Let commit
 Type on your terminal
@@ -112,22 +112,22 @@ Type on your terminal
 git commit -m "Test file created"
 ```
 Output
-<img src="git-4.png">
+<img src="./images/git-4.png">
 
 ## Let check git status now
 ```
 git status
 ```
-<img src="git-5.png">
+<img src="./images/git-5.png">
 We have successfully comitted our first change
 
 **Note: Always put good comment message while commit**
 
 ## Lets do few more change
-<img src="git-6.png">
+<img src="./images/git-6.png">
 
 ## Lets check the status now
-<img src="git-7.png">
+<img src="./images/git-7.png">
 Now you can see the file is modified and there are changes we can commit.
 
 Before commit we have to make the changes ready for commit. This process is called moving the changes to staging area.
@@ -137,7 +137,7 @@ Before commit we have to make the changes ready for commit. This process is call
 git add .
 git status
 ```
-<img src="git-8.png">
+<img src="./images/git-8.png">
 
 ## Commit the new changes
 Since we have the code in staging area(Code ready to be commited). Lets commit it using git commit
@@ -148,10 +148,90 @@ and then check the git status
 ```
 git status
 ```
-<img src="git-9.png">
+<img src="./images/git-9.png">
 
 ## Lets check what are the changes we have done so far using git log
 ```
 git log
 ```
-<img src="git-10.png">
+<img src="./images/git-10.png">
+
+<br/>
+
+# Day2
+
+## How to start working on a new feature
+
+## Why are branches useful?
+
+Let’s say you are working on a project with a team. You’ve been working on a significant feature that requires a lot of changes to the codebase, and, all of a sudden, one of your team members tells you that there is a major bug, and you need to prioritize it and fix it.
+
+You will find yourself in a confusing situation. Not only will you need to switch context completely by focusing on the new issue at hand, but where will you store all the code you have been working on for the unfinished feature? The bug has nothing to do with the unfinished feature. Fixing the bug along with the feature is going to create a lot of confusion for everyone.
+
+You will somehow need to go back to a state or snapshot of the source code before you started making changes to it for the feature, fix the bug, and then go back to work from where you had left off. This scenario is precisely where Git branches can work in your favor.
+
+## Branches in Git
+
+- In Git, you start with the one, primary branch called the master. This name is the default, given to the branch the moment you create your very first commit.
+
+- All the other commits you make from that point on are made on the master branch. Git, however, allows you to create as many other branches as you like.
+
+- You can create a separate branch that diverts away from the master and continue to do your work from there. The changes you make from that point forward and the commits you create will only be reflected in this branch and will not affect the source code in the master branch.
+
+- When you decide to create a new branch, what Git essentially does is create a new pointer to the current snapshot or commit to your project.
+
+## Creating Branch
+
+So lets say we want to create a feature called "calculator"
+
+Before that let find at what branch you are.
+
+```
+git branch
+```
+<img src="./images/git-11.png">
+
+Now lets create a branch from master branch
+
+```
+git checkout -b calculator
+```
+<img src="./images/git-12.png">
+
+Now you have moved to the new branch. Lets check this out.
+```
+git branch
+```
+<img src="./images/git-13.png">
+
+## Lets make some changes to the new branch
+
+Create a class calculator to the project
+<img src="./images/git-14.png">
+
+## Check the changes using git status
+```
+git status
+```
+<img src="./images/git-15.png">
+
+## Lets commit the changes
+<img src="./images/git-16.png">
+
+## Lets do few more changes and commit
+<img src="./images/git-17.png">
+<img src="./images/git-18.png">
+
+## Lets check git log
+```
+git log
+```
+Output
+<img src="./images/git-19.png">
+
+you can see, every commit entry has been assigned with a hashcode
+
+```mermaid
+flowchart LR
+    id1[This is the text in the box]
+```
