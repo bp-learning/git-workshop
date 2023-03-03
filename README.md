@@ -232,6 +232,11 @@ Output
 you can see, every commit entry has been assigned with a hashcode
 
 ```mermaid
-flowchart LR
-    id1[This is the text in the box]
+gitGraph
+    commit
+    commit
+   branch calculator
+   checkout calculator
+   commit
+   commit
 ```
