@@ -1,29 +1,50 @@
+---
+marp: true
+footer: '![width:200px](images/header_logo.png)'
+
+---
+
 # git-workshop
+
+---
 
 ## Why do we need version control?
 Have you ever worked on a big puzzle or a drawing that took a long time to finish? And maybe you made some mistakes along the way or wanted to try different things to see what looked best? Well, programming is kind of like that too. When people write computer programs, they often have to work on them for a long time and make lots of changes.
 
 That's where Git comes in! Git is like a special tool that helps programmers keep track of all the changes they make to their programs. It's kind of like a big notebook where they can write down what they changed, when they changed it, and why.
 
+---
+
+## Why do we need version control?
+
 Similarly, Let’s say you create a project and have worked on it for over a month. While adding a new feature, you realize that something you did a week back won’t allow your new feature to work properly. You decide to revert those changes but aren’t sure if you have made similar changes in other files as well.
 
 What if there was a way for you to identify what exact changes you made and where in your code you made them? That’s where version control can help you out.
 
-## Prime Reasons
+---
+
+## Prime Reasons for using git
 - Keep track of changes to the codebase
 - Ease in collaborative work
 - Showcase your code to outside world( helpful in interviews)
+
+---
 
 ## What is Git?
 - Git is a distributed version control software. 
 - a complete copy of the entire codebase will be available on every contributor’s computer; we can also call this codebase a **local repository**.
 - Git tracks the local repository, maintains a record of all the changes that occur within it.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1024px-Git-logo.svg.png" width="300">
+![width:300px](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1024px-Git-logo.svg.png)
+
+---
 
 ## Git is distributed version control
 
-<img src="./images/git-1.png" width="500">
+![width:500px](images/git-1.png)
+
+---
+
 
 ## How to install GIT?
 
@@ -36,9 +57,13 @@ Open command prompt or terminal and type
 git --version
 ```
 
+---
+
 ## git config
 
 Our main goal is to set our credentials that will identify our contributions and changes in the project source code. Doing so will help us identify and differentiate between the changes made by various contributors.
+
+---
 
 ## Setting our email and username for Git
 We will set up our name and email globally for Git by using the following commands:
@@ -56,6 +81,8 @@ git config user.email
 git config user.name
 ```
 
+---
+
 ## Creating a New Project With Git
 Lets create a folder first
 ```
@@ -72,7 +99,10 @@ and create a file called Test.java
 -- sample_project
 |---- Test.java
 ```
-Now we a folder and a file created in it, let initialise this folder into git repository.
+
+---
+
+Now we have a folder and a file created in it, let initialise this folder into git repository.
 
 In Terminal, type the command
 ```
@@ -87,15 +117,19 @@ git init
 
 Usually .git directory is hidden, and its recomended that we should not touch it, if we want git to work perfectly for your project
 
+---
+
 ## git status command
 Type git status in the terminal
 ```
 git status
 ```
 Output
-<image src="./images/git-2.png">
+![width:800px](images/git-2.png)
 
 The Red marked files indicates that there are changes in the directory. In our case, a new file is added which is not yet commited in git repo.
+
+---
 
 ## Let make this file ready for commit by using git add
 In your terminal, type
@@ -104,7 +138,9 @@ git add .
 git status
 ```
 Output
-<img src="./images/git-3.png">
+![width:800px](images/git-3.png)
+
+---
 
 ## Now your changes are ready to be commit, Let commit
 Type on your terminal
@@ -112,32 +148,42 @@ Type on your terminal
 git commit -m "Test file created"
 ```
 Output
-<img src="./images/git-4.png">
+![width:800px](images/git-4.png)
+
+---
 
 ## Let check git status now
 ```
 git status
 ```
-<img src="./images/git-5.png">
+![width:800px](images/git-5.png)
 We have successfully comitted our first change
 
 **Note: Always put good comment message while commit**
 
+---
+
 ## Lets do few more change
-<img src="./images/git-6.png">
+![width:1000px](images/git-6.png)
+
+---
 
 ## Lets check the status now
-<img src="./images/git-7.png">
+![width:800px](images/git-7.png)
 Now you can see the file is modified and there are changes we can commit.
 
 Before commit we have to make the changes ready for commit. This process is called moving the changes to staging area.
+
+---
 
 ## Moving changes to staging area
 ```
 git add .
 git status
 ```
-<img src="./images/git-8.png">
+![width:800px](images/git-8.png)
+
+---
 
 ## Commit the new changes
 Since we have the code in staging area(Code ready to be commited). Lets commit it using git commit
@@ -148,17 +194,21 @@ and then check the git status
 ```
 git status
 ```
-<img src="./images/git-9.png">
+![width:800px](images/git-9.png)
+
+---
 
 ## Lets check what are the changes we have done so far using git log
 ```
 git log
 ```
-<img src="./images/git-10.png">
+![width:800px](images/git-10.png)
 
-<br/>
+---
 
-# Day2
+# Day2 - New Features
+
+---
 
 ## How to start working on a new feature
 
@@ -170,6 +220,8 @@ You will find yourself in a confusing situation. Not only will you need to switc
 
 You will somehow need to go back to a state or snapshot of the source code before you started making changes to it for the feature, fix the bug, and then go back to work from where you had left off. This scenario is precisely where Git branches can work in your favor.
 
+---
+
 ## Branches in Git
 
 - In Git, you start with the one, primary branch called the master. This name is the default, given to the branch the moment you create your very first commit.
@@ -180,6 +232,8 @@ You will somehow need to go back to a state or snapshot of the source code befor
 
 - When you decide to create a new branch, what Git essentially does is create a new pointer to the current snapshot or commit to your project.
 
+---
+
 ## Creating Branch
 
 So lets say we want to create a feature called "calculator"
@@ -189,100 +243,76 @@ Before that let find at what branch you are.
 ```
 git branch
 ```
-<img src="./images/git-11.png">
+![width:800px](images/git-11.png)
+
+---
 
 Now lets create a branch from master branch
 
 ```
 git checkout -b calculator
 ```
-<img src="./images/git-12.png">
+![width:800px](images/git-12.png)
+
+
 
 Now you have moved to the new branch. Lets check this out.
 ```
 git branch
 ```
-<img src="./images/git-13.png">
+![width:800px](images/git-13.png)
+
+---
 
 ## Lets make some changes to the new branch
 
 Create a class calculator to the project
-<img src="./images/git-14.png">
+![width:800px](images/git-14.png)
+
+---
 
 ## Check the changes using git status
 ```
 git status
 ```
-<img src="./images/git-15.png">
+![width:800px](images/git-15.png)
+
+---
 
 ## Lets commit the changes
-<img src="./images/git-16.png">
+![width:800px](images/git-16.png)
+
+---
 
 ## Lets do few more changes and commit
-<img src="./images/git-17.png">
-<img src="./images/git-18.png">
+![width:800px](images/git-17.png)
+![width:800px](images/git-18.png)
+
+---
 
 ## Lets check git log
 ```
 git log
 ```
 Output
-<img src="./images/git-19.png">
+![width:800px](images/git-19.png)
+
+---
 
 you can see, every commit entry has been assigned with a hashcode
 
-```mermaid
-gitGraph
-    commit
-    commit
-   branch calculator
-   checkout calculator
-   commit
-   commit
-```
+![width:800px](images/git-22.png)
+
+---
 
 ## Now your calculator changes are done. So lets merge our calculator changes to master branch
 ```
 git checkout master
 git merge calculator
 ```
-<img src="./images/git-20.png">
+![width:800px](images/git-20.png)
+
+---
 
 Now check the git logs, using git log
-<img src="./images/git-21.png">
-
-## Moving the changes to cloud
-
-Till now all our changes are in local, so if something happens to your computer, we will loose all the changes. It times to move our code to cloud. 
-
-Cloud means some remote url which can be easily access over the internet.
-
-Github is one such cloud. There are many like gitlab, bitbucket etc.
-
-So we will push our code to github.
-
-## Github
-
-Go to https://github.com and register as new user. If you are already a user, login.
-
-By using the + icon at right, create new repository with the same name as our folder name.
-
-![width:800px](images/git-23.png)
-
-Click on New Repository
-
-![width:800px](images/git-24.png)
-
-Click on **Create Repository**
-
-![width:800px](images/git-25.png)
-
-So we are going to use 2nd option because we already have the git repository
-
-**…or push an existing repository from the command line**
-```
-git remote add origin https://github.com/bhupendraparihar/sample_project.git
-git branch -M master
-git push -u origin master
-```
-![width:800px](images/git-26.png)
+![width:800px](images/git-21.png)
